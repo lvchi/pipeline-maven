@@ -7,10 +7,10 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    chmod +x /var/jenkins_home/workspace/pipeline-docker-maven/pipeline/jenkins/build/mvn.sh
-                    chmod +x /var/jenkins_home/workspace/pipeline-docker-maven/pipeline/jenkins/build/build.sh
-                    /var/jenkins_home/workspace/pipeline-docker-maven/pipeline/jenkins/build/mvn.sh mvn -B -DskipTests clean package
-                    /var/jenkins_home/workspace/pipeline-docker-maven/pipeline/jenkins/build/build.sh
+                    chmod +x jenkins/build/mvn.sh
+                    chmod +x jenkins/build/build.sh
+                    ./jenkins/build/mvn.sh mvn -B -DskipTests clean package
+                    ./jenkins/build/build.sh
                 '''
             }
 
