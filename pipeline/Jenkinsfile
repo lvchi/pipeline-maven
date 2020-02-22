@@ -9,7 +9,6 @@ pipeline {
                 sh '''
                     /var/jenkins_home/workspace/pipeline-docker-maven/pipeline/jenkins/build/mvn.sh mvn -B -DskipTests clean package
                     /var/jenkins_home/workspace/pipeline-docker-maven/pipeline/jenkins/build/build.sh
-
                 '''
             }
 
