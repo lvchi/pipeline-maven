@@ -47,7 +47,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh './pipeline/jenkins/deploy/deploy.sh'
+                sh '''
+                   chmod +x pipeline/jenkins/deploy/deploy.sh
+                   ./pipeline/jenkins/deploy/deploy.sh
+                '''
             }
         }
     }
