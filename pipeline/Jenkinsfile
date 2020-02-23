@@ -23,12 +23,15 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh './jenkins/test/mvn.sh mvn test'
+                sh '''
+                    chmod +x pipeline/jenkins/test/mvn.sh
+                    ./pipeline/jenkins/test/mvn.sh mvn test'
+                '''
             }
 
             post {
                 always {
-                    junit 'java-app/target/surefire-reports/*.xml'
+                    junit '$pwd/java-app/target/surefire-reports/*.xml'
                 }
             }
         }
