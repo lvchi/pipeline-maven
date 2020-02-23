@@ -38,7 +38,10 @@ pipeline {
 
         stage('Push') {
             steps {
-                sh './jenkins/push/push.sh'
+                sh '''
+                   chmod +x pipeline/jenkins/push/push.sh
+                   ./pipeline/jenkins/push/push.sh
+                '''
             }
         }
 
