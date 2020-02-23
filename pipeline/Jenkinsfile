@@ -31,8 +31,7 @@ pipeline {
 
             post {
                 always {
-                    sh 'pwd'
-                    junit './java-app/target/surefire-reports/*.xml'
+                    junit './pipeline/java-app/target/surefire-reports/*.xml'
                 }
             }
         }
