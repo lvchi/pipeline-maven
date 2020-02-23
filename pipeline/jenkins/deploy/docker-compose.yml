@@ -1,0 +1,5 @@
+version: '3'
+services:
+   maven:
+      image: "chilv/$IMAGE:$TAG"
+      container_name: maven_app
